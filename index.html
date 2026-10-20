@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noor & Barakah | Resin Arts</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="nav-logo">
+            Noor & Barakah
+        </div>
+
+       <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+
+    <span id="userGreeting"></span>
+    <a href="auth.html" id="loginLink">Login</a>
+    <a href="auth.html" id="registerLink">Register</a>
+    <a href="cart.html">Cart 🛒</a>
+    <a href="#" id="logoutLink" onclick="logoutUser()" style="display:none;">Logout</a>
+    <a href="owner-login.html">👑 Owner</a>
+ 
+</nav>
+
+       <div class="nav-buttons">
+    <button onclick="window.location.href='auth.html'">
+        Login
+    </button>
+
+    <button onclick="window.location.href='auth.html#register'">
+        Register
+    </button>
+
+    <button onclick="goToCart()">
+        🛒 Cart    </button>
+</div>
+
+    </header>
+    <!-- HERO / LANDING PAGE -->
+    <section class="hero">
+
+        <!-- LEFT CORNER CONTENT -->
+        <div class="hero-content">
+
+            <p class="small-title">
+                HANDMADE WITH LOVE
+            </p>
+
+            <h1>
+                NOOR &<br>
+                BARAKAH
+            </h1>
+
+            <p class="subtitle">
+                Beautiful Handmade Resin Arts
+            </p>
+
+            <p class="description">
+                Unique handmade resin creations made with love,
+                creativity and care.
+            </p>
+
+            <button class="shop-btn" onclick="goToProducts()">
+                Explore Products
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="intro" id="about">
+
+        <p class="section-small">
+            WELCOME TO
+        </p>
+
+        <h2>
+            Noor & Barakah Resin Arts
+        </h2>
+
+        <p>
+            Discover beautiful handmade resin products created
+            specially for you. From personalized gifts to
+            elegant decorative pieces, every creation is unique.
+        </p>
+
+        <button class="shop-btn" onclick="goToProducts()">
+            Shop Now
+        </button>
+
+    </section>
+
+
+    <!-- PRODUCTS PREVIEW -->
+    <section class="products-preview" id="products">
+
+        <p class="section-small">
+            OUR COLLECTION
+        </p>
+
+        <h2>
+            Explore Our Products
+        </h2>
+
+        <div class="product-box">
+
+            <div>
+                <h3>Resin Gifts</h3>
+                <p>
+                    Beautiful handmade gifts for your loved ones.
+                </p>
+            </div>
+
+            <div>
+                <h3>Personalized Items</h3>
+                <p>
+                    Custom names, designs and special creations.
+                </p>
+            </div>
+
+            <div>
+                <h3>Home Decor</h3>
+                <p>
+                    Elegant resin pieces for your space.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+      
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+
+    <p class="section-small">GET IN TOUCH</p>
+
+    <h2>Let's Create Something Beautiful</h2>
+
+    <p class="contact-intro">
+        Have a question, want to order a product, or looking for
+        a customized resin design? We'd love to hear from you.
+    </p>
+
+    <div class="contact-buttons">
+
+        <button onclick="openWhatsApp()" class="contact-btn">
+            <span>💬</span>
+            <div>
+                <strong>WhatsApp</strong>
+                <small>Chat with us</small>
+            </div>
+        </button>
+
+        <a href="https://www.instagram.com/noor_and_barakah__/"
+           target="_blank"
+           class="contact-btn">
+
+            <span>📸</span>
+            <div>
+                <strong>Instagram</strong>
+                <small>@noor_and_barakah__</small>
+            </div>
+
+        </a>
+        
+
+        <a href="tel:+918712252055" class="contact-btn">
+
+            <span>📞</span>
+            <div>
+                <strong>Call Us</strong>
+                <small>8712252055</small>
+            </div>
+
+        </a>
+
+    </div>
+    <section id="customize" class="customize-section">
+
+    <p class="section-small">
+
+    <h2>Customize Your Product</h2>
+
+    <p>
+        Have your own idea or reference design?
+        Tell us what you want and let's create it together.
+    </p>
+
+    <textarea
+        id="customDetails"
+        placeholder="Describe your idea, design, colors, name, size, or any other requirements..."
+    ></textarea>
+
+    <button onclick="sendCustomOrder()">
+
+    </button>
+      <button onclick="window.location.href='my-orders.html'">
+    📦 My Orders
+</button>
+    
+
+</section>
+
+</section>
+       <div class="contact-heading">
+    <h2>Let's Create Something Beautiful</h2>
+    <p>Contact us for products and custom orders.</p>
+</div>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+   
+
+
+        <p>
+            © 2026 Noor & Barakah Resin Arts
+        </p>
+
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+function loginUser() {
+    alert("loginUser function is working ✅");
+}
+</script>
+
+</body>
+</html>
+</body>
+
+</html>
+

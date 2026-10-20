@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Reviews | Noor & Barakah</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ================================
+           REVIEWS PAGE
+        ================================= */
+
+        .reviews-page {
+            min-height: 100vh;
+            background: #faf7f4;
+            padding: 55px 7%;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .reviews-header h1 {
+            color: #234d3c;
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .reviews-header p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        /* SUMMARY */
+
+        .review-summary {
+            max-width: 850px;
+            margin: 0 auto 40px;
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+        }
+
+        .average-rating {
+            text-align: center;
+        }
+
+        .average-rating h2 {
+            color: #234d3c;
+            font-size: 45px;
+            margin-bottom: 3px;
+        }
+
+        .stars-display {
+            color: #d19a38;
+            font-size: 25px;
+            letter-spacing: 3px;
+        }
+
+        .average-rating p {
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* REVIEW FORM */
+
+        .review-form {
+            max-width: 850px;
+            margin: 0 auto 45px;
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+        }
+
+        .review-form h2 {
+            color: #234d3c;
+            margin-bottom: 25px;
+        }
+
+        .review-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 13px;
+            margin-bottom: 18px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .review-input:focus {
+            border-color: #234d3c;
+            box-shadow: 0 0 0 3px rgba(35,77,60,0.08);
+        }
+
+        textarea.review-input {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* STAR SELECTOR */
+
+        .rating-title {
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .star-selector {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .star-selector span {
+            font-size: 32px;
+            color: #ccc;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .star-selector span:hover,
+        .star-selector span.active {
+            color: #d19a38;
+            transform: scale(1.1);
+        }
+
+        .submit-review {
+            width: 100%;
+            padding: 14px;
+            border-radius: 25px;
+            background: #234d3c;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .submit-review:hover {
+            background: #8d6e63;
+        }
+
+        /* REVIEWS */
+
+        .reviews-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .reviews-list h2 {
+            color: #234d3c;
+            margin-bottom: 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.06);
+            border: 1px solid #eee;
+        }
+
+        .review-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .reviewer-name {
+            color: #234d3c;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .review-stars {
+            color: #d19a38;
+            font-size: 18px;
+            margin: 7px 0;
+            letter-spacing: 2px;
+        }
+
+        .review-comment {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 8px;
+        }
+
+        .verified {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background: #edf5f0;
+            color: #234d3c;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .delete-review {
+            background: #9b5c5c;
+            padding: 7px 14px;
+            font-size: 12px;
+            border-radius: 18px;
+        }
+
+        .delete-review:hover {
+            background: #7d4545;
+        }
+
+        .no-reviews {
+            background: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 20px;
+            color: #888;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            .reviews-page {
+                padding: 40px 15px;
+            }
+
+            .reviews-header h1 {
+                font-size: 30px;
+            }
+
+            .review-summary {
+                padding: 25px;
+            }
+
+            .review-form {
+                padding: 25px 20px;
+            }
+
+            .review-top {
+                flex-direction: column;
+            }
+
+            .delete-review {
+                align-self: flex-start;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            NOOR & BARAKAH
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Store
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+            <a href="my-orders.html">
+                My Orders
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- REVIEWS PAGE -->
+
+    <main class="reviews-page">
+
+        <div class="reviews-header">
+
+            <h1>
+                ⭐ Customer Reviews
+            </h1>
+
+            <p>
+                What our customers say about Noor & Barakah Resin Arts
+            </p>
+
+        </div>
+
+
+        <!-- REVIEW SUMMARY -->
+
+        <div class="review-summary">
+
+            <div class="average-rating">
+
+                <h2 id="averageRating">
+                    0.0
+                </h2>
+
+                <div
+                    class="stars-display"
+                    id="averageStars"
+                >
+                    ☆☆☆☆☆
+                </div>
+
+                <p id="reviewCount">
+                    0 reviews
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADD REVIEW -->
+
+        <div class="review-form">
+
+            <h2>
+                ✍️ Write a Review
+            </h2>
+
+
+            <input
+                type="text"
+                id="reviewName"
+                class="review-input"
+                placeholder="Your Name"
+            >
+
+
+            <p class="rating-title">
+                Your Rating
+            </p>
+
+
+            <div class="star-selector">
+
+                <span data-rating="1">★</span>
+                <span data-rating="2">★</span>
+                <span data-rating="3">★</span>
+                <span data-rating="4">★</span>
+                <span data-rating="5">★</span>
+
+            </div>
+
+
+            <textarea
+                id="reviewComment"
+                class="review-input"
+                placeholder="Tell us about your experience..."
+            ></textarea>
+
+
+            <button
+                class="submit-review"
+                onclick="submitReview()"
+            >
+                Submit Review ⭐
+            </button>
+
+        </div>
+
+
+        <!-- REVIEWS -->
+
+        <div class="reviews-list">
+
+            <h2>
+                Customer Experiences
+            </h2>
+
+            <div id="reviewsContainer">
+
+                Loading reviews...
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script>
+
+        const API_URL = "http://localhost:3000";
+
+        let selectedRating = 0;
+
+
+        /* ================================
+           STAR SELECTION
+        ================================= */
+
+        const stars =
+            document.querySelectorAll(".star-selector span");
+
+
+        stars.forEach(star => {
+
+            star.addEventListener("click", function () {
+
+                selectedRating =
+                    Number(this.dataset.rating);
+
+                stars.forEach(s => {
+
+                    const rating =
+                        Number(s.dataset.rating);
+
+                    if (rating <= selectedRating) {
+
+                        s.classList.add("active");
+
+                    } else {
+
+                        s.classList.remove("active");
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* ================================
+           SUBMIT REVIEW
+        ================================= */
+
+        async function submitReview() {
+
+            const name =
+                document.getElementById("reviewName")
+                    .value.trim();
+
+            const comment =
+                document.getElementById("reviewComment")
+                    .value.trim();
+
+
+            if (!name) {
+
+                alert("Please enter your name.");
+
+                return;
+            }
+
+
+            if (selectedRating === 0) {
+
+                alert("Please select a star rating.");
+
+                return;
+            }
+
+
+            if (!comment) {
+
+                alert("Please write your review.");
+
+                return;
+            }
+
+
+            const review = {
+
+                customerName: name,
+
+                rating: selectedRating,
+
+                comment: comment,
+
+                date: new Date().toLocaleDateString(),
+
+                verified: false
+
+            };
+
+
+            try {
+
+                await axios.post(
+                    `${API_URL}/reviews`,
+                    review
+                );
+
+
+                alert("Thank you for your review! ⭐");
+
+
+                document.getElementById("reviewName")
+                    .value = "";
+
+                document.getElementById("reviewComment")
+                    .value = "";
+
+
+                selectedRating = 0;
+
+
+                stars.forEach(star => {
+
+                    star.classList.remove("active");
+
+                });
+
+
+                loadReviews();
+
+            } catch (error) {
+
+                console.error(error);
+
+                alert(
+                    "Unable to submit review. Make sure JSON Server is running."
+                );
+
+            }
+
+        }
+
+
+        /* ================================
+           LOAD REVIEWS
+        ================================= */
+
+        async function loadReviews() {
+
+            try {
+
+                const response =
+                    await axios.get(
+                        `${API_URL}/reviews`
+                    );
+
+
+                const reviews =
+                    response.data;
+
+
+                displayReviews(reviews);
+
+                calculateRating(reviews);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                document.getElementById(
+                    "reviewsContainer"
+                ).innerHTML = `
+
+                    <div class="no-reviews">
+
+                        <h3>
+                            No reviews yet
+                        </h3>
+
+                        <p>
+                            Be the first person to leave a review!
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* ================================
+           DISPLAY REVIEWS
+        ================================= */
+
+        function displayReviews(reviews) {
+
+            const container =
+                document.getElementById(
+                    "reviewsContainer"
+                );
+
+
+            if (reviews.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="no-reviews">
+
+                        <h3>
+                            No reviews yet ⭐
+                        </h3>
+
+                        <p>
+                            Be the first customer to review us!
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                reviews.reverse().map(review => `
+
+                    <div class="review-card">
+
+                        <div class="review-top">
+
+                            <div>
+
+                                <div class="reviewer-name">
+                                    👤 ${review.customerName}
+                                </div>
+
+                                <div class="review-stars">
+                                    ${getStars(review.rating)}
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <div class="review-date">
+                                    ${review.date}
+                                </div>
+
+                                <button
+                                    class="delete-review"
+                                    onclick="deleteReview('${review.id}')"
+                                >
+                                    Delete
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="review-comment">
+                            "${review.comment}"
+                        </p>
+
+
+                        ${
+                            review.verified
+                            ?
+                            `
+                            <span class="verified">
+                                ✓ Verified Purchase
+                            </span>
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
+                `).join("");
+
+        }
+
+
+        /* ================================
+           STAR DISPLAY
+        ================================= */
+
+        function getStars(rating) {
+
+            let stars = "";
+
+            for (let i = 1; i <= 5; i++) {
+
+                stars +=
+                    i <= rating
+                    ? "★"
+                    : "☆";
+
+            }
+
+            return stars;
+
+        }
+
+
+        /* ================================
+           CALCULATE AVERAGE
+        ================================= */
+
+        function calculateRating(reviews) {
+
+            const count =
+                reviews.length;
+
+
+            if (count === 0) {
+
+                document.getElementById(
+                    "averageRating"
+                ).innerText = "0.0";
+
+                document.getElementById(
+                    "averageStars"
+                ).innerText = "☆☆☆☆☆";
+
+                document.getElementById(
+                    "reviewCount"
+                ).innerText = "0 reviews";
+
+                return;
+
+            }
+
+
+            const total =
+                reviews.reduce(
+                    (sum, review) =>
+                        sum + Number(review.rating),
+                    0
+                );
+
+
+            const average =
+                total / count;
+
+
+            document.getElementById(
+                "averageRating"
+            ).innerText =
+                average.toFixed(1);
+
+
+            document.getElementById(
+                "averageStars"
+            ).innerText =
+                getStars(Math.round(average));
+
+
+            document.getElementById(
+                "reviewCount"
+            ).innerText =
+                `${count} review${count === 1 ? "" : "s"}`;
+
+        }
+
+
+        /* ================================
+           DELETE REVIEW
+        ================================= */
+
+        async function deleteReview(id) {
+
+            const confirmDelete =
+                confirm(
+                    "Are you sure you want to delete this review?"
+                );
+
+
+            if (!confirmDelete) return;
+
+
+            try {
+
+                await axios.delete(
+                    `${API_URL}/reviews/${id}`
+                );
+
+
+                alert("Review deleted.");
+
+                loadReviews();
+
+            } catch (error) {
+
+                alert(
+                    "Unable to delete review."
+                );
+
+            }
+
+        }
+
+
+        /* ================================
+           START
+        ================================= */
+
+        loadReviews();
+
+    </script>
+
+</body>
+
+</html>

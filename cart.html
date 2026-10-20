@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart | Noor & Barakah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="nav-logo">
+            Noor & Barakah
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="nav-buttons">
+
+            <button onclick="window.location.href='auth.html'">
+                Login
+            </button>
+
+            <button onclick="window.location.href='auth.html#register'">
+                Register
+            </button>
+
+            <button onclick="window.location.href='cart.html'">
+                🛒 Cart
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART -->
+
+    <section class="cart-page">
+
+        <p class="section-small">
+            NOOR & BARAKAH
+        </p>
+
+        <h1>Your Shopping Cart</h1>
+
+        <div id="cartContainer"></div>
+
+        <div class="cart-summary">
+
+            <h2>
+                Total: ₹<span id="cartTotal">0</span>
+            </h2>
+
+            <button
+                class="checkout-btn"
+                onclick="placeOrder()"
+            >
+                Place Order
+            </button>
+
+        </div>
+
+    </section>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Noor & Barakah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-box">
+
+            <h1>NOOR & BARAKAH</h1>
+
+            <p class="auth-subtitle">
+                RESIN ARTS
+            </p>
+
+
+            <!-- LOGIN -->
+
+            <div id="loginForm">
+
+                <h2>Login</h2>
+
+                <input
+                    type="text"
+                    id="loginCustomerId"
+                    placeholder="Customer ID"
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                >
+                 <button type="button" onclick="loginUser()">
+                      Login
+                    </button>
+                    
+
+                <p>
+                    Don't have an account?
+                    <span onclick="showRegister()">
+                        Register
+                    </span>
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div id="registerForm" style="display: none;">
+
+                <h2>Create Account</h2>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                >
+
+                <input
+                    type="text"
+                    id="customerId"
+                    placeholder="Customer ID"
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                >
+
+                <textarea
+                    id="address"
+                    placeholder="Address"
+                ></textarea>
+
+                <button type="button" onclick="registerUser()">
+                    Register
+                </button>
+
+                <p>
+                    Already have an account?
+                    <span onclick="showLogin()">
+                        Login
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AXIOS MUST COME BEFORE script.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

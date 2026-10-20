@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Owner Orders | Noor & Barakah</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* ==============================
+       OWNER PAGE
+    ============================== */
+
+    .owner-page {
+        min-height: 100vh;
+        background: #faf7f4;
+        padding: 50px 7%;
+    }
+
+    .owner-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .owner-header h1 {
+        color: #234d3c;
+        font-size: 38px;
+        margin-bottom: 8px;
+    }
+
+    .owner-header p {
+        color: #777;
+        font-size: 16px;
+    }
+
+
+    /* ORDER GRID */
+
+    #adminOrders {
+        max-width: 1100px;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns:
+            repeat(auto-fit, minmax(420px, 1fr));
+
+        gap: 30px;
+    }
+
+
+    /* ORDER BOX */
+
+    .owner-order-box {
+        background: #ffffff;
+
+        border-radius: 20px;
+
+        padding: 28px;
+
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.08);
+
+        border: 1px solid #eee;
+
+        transition: 0.3s;
+    }
+
+    .owner-order-box:hover {
+        transform: translateY(-4px);
+
+        box-shadow:
+            0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+
+    /* CUSTOMER */
+
+    .customer-section {
+        padding-bottom: 20px;
+
+        border-bottom: 1px solid #eee;
+    }
+
+    .customer-name {
+        color: #234d3c;
+
+        font-size: 24px;
+
+        margin-bottom: 18px;
+    }
+
+    .customer-info {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-bottom: 12px;
+
+        color: #555;
+
+        font-size: 15px;
+    }
+
+    .customer-info strong {
+        color: #333;
+    }
+
+
+    /* ORDERED ITEMS */
+
+    .items-section {
+        margin-top: 22px;
+    }
+
+    .items-title {
+        color: #234d3c;
+
+        font-size: 19px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* PRODUCT */
+
+    .owner-product {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        background: #faf7f4;
+
+        border-radius: 14px;
+
+        padding: 12px;
+
+        margin-bottom: 12px;
+    }
+
+    .owner-product img {
+        width: 85px;
+
+        height: 85px;
+
+        object-fit: cover;
+
+        border-radius: 12px;
+    }
+
+    .owner-product-info {
+        flex: 1;
+    }
+
+    .owner-product-info h4 {
+        color: #333;
+
+        margin-bottom: 5px;
+
+        font-size: 16px;
+    }
+
+    .owner-product-info p {
+        color: #777;
+
+        font-size: 14px;
+
+        margin: 3px 0;
+    }
+
+
+    /* WHATSAPP BUTTON */
+
+    .whatsapp-button {
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 14px 18px;
+
+        border-radius: 25px;
+
+        background: #25D366;
+
+        color: white;
+
+        font-size: 15px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .whatsapp-button:hover {
+        background: #1da851;
+
+        transform: translateY(-2px);
+    }
+
+
+    /* NO ORDERS */
+
+    .no-orders {
+        grid-column: 1 / -1;
+
+        background: white;
+
+        padding: 60px;
+
+        text-align: center;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .no-orders h2 {
+        color: #234d3c;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+        .owner-page {
+            padding: 35px 15px;
+        }
+
+        .owner-header h1 {
+            font-size: 30px;
+        }
+
+        #adminOrders {
+            grid-template-columns: 1fr;
+        }
+
+        .owner-order-box {
+            padding: 20px;
+        }
+
+        .customer-name {
+            font-size: 21px;
+        }
+
+        .owner-product img {
+            width: 70px;
+
+            height: 70px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =================================
+     OWNER AUTHENTICATION
+================================== -->
+
+<script>
+
+    const OWNER_PASSWORD = "Noor@1234";
+
+    const enteredPassword = prompt(
+        "🔐 OWNER ACCESS\n\nEnter your owner password:"
+    );
+
+
+    if (enteredPassword !== OWNER_PASSWORD) {
+
+        alert("Access denied ❌");
+
+        window.location.href = "index.html";
+
+    }
+
+</script>
+
+
+
+<!-- =================================
+     NAVBAR
+================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        NOOR & BARAKAH
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Store
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+        <a href="product-manager.html">🛍️ Manage Products</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================
+     OWNER ORDERS
+================================== -->
+
+<main class="owner-page">
+
+
+    <div class="owner-header">
+
+        <h1>
+            Owner Orders 👑
+        </h1>
+
+        <p>
+            Customer orders received through Noor & Barakah
+        </p>
+
+    </div>
+
+
+
+    <div id="adminOrders">
+
+        <div class="no-orders">
+
+            <h2>
+                Loading Orders...
+            </h2>
+
+            <p>
+                Please wait.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- AXIOS -->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+<script>
+
+    const API_URL = "http://localhost:3000";
+
+
+    /* =================================
+       WHATSAPP FUNCTION
+    ================================= */
+
+    function contactCustomer(phone, name, items) {
+
+        if (!phone) {
+
+            alert(
+                "Customer phone number is not available."
+            );
+
+            return;
+        }
+
+
+        /*
+            Remove spaces, +, -, brackets
+        */
+
+        let cleanPhone =
+            String(phone).replace(/\D/g, "");
+
+
+        /*
+            If Indian 10-digit number,
+            automatically add +91
+        */
+
+        if (cleanPhone.length === 10) {
+
+            cleanPhone = "91" + cleanPhone;
+
+        }
+
+
+        /*
+            Prepare ordered items
+        */
+
+        let itemText = "";
+
+        if (items && items.length > 0) {
+
+            itemText = items.map(item => {
+
+                return `${item.name} × ${item.quantity}`;
+
+            }).join(", ");
+
+        } else {
+
+            itemText = "your customized order";
+
+        }
+
+
+        /*
+            WhatsApp message
+        */
+
+        const message =
+            `Hii ${name || "there"},\n\n` +
+            `This is Noor & Barakah Resin Arts. ` +
+            `I received your order.\n\n` +
+            `Ordered items: ${itemText}\n\n` +
+            `I would like to confirm your customized order with you. 😊`;
+
+
+        /*
+            WhatsApp URL
+        */
+
+        const whatsappURL =
+            `https://wa.me/${cleanPhone}?text=` +
+            encodeURIComponent(message);
+
+
+        /*
+            Open WhatsApp
+        */
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+
+
+    /* =================================
+       LOAD ALL ORDERS
+    ================================= */
+
+    async function loadOrders() {
+
+        const container =
+            document.getElementById("adminOrders");
+
+
+        try {
+
+            const response =
+                await axios.get(
+                    `${API_URL}/orders`
+                );
+
+
+            const orders =
+                response.data;
+
+
+            /* NO ORDERS */
+
+            if (orders.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="no-orders">
+
+                        <h2>
+                            No Orders Yet 📦
+                        </h2>
+
+                        <p>
+                            Customer orders will appear here.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+
+            /* DISPLAY ORDERS */
+
+            container.innerHTML =
+
+                orders.map(order => `
+
+                    <div class="owner-order-box">
+
+
+                        <!-- CUSTOMER INFORMATION -->
+
+                        <div class="customer-section">
+
+
+                            <h2 class="customer-name">
+
+                                👤
+                                ${order.customerName || "Customer"}
+
+                            </h2>
+
+
+                            <!-- PHONE -->
+
+                            <div class="customer-info">
+
+                                <span>
+                                    📞
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Phone
+                                    </strong>
+
+                                    <br>
+
+                                    ${order.phone || "Not provided"}
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ADDRESS -->
+
+                            <div class="customer-info">
+
+                                <span>
+                                    📍
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Address
+                                    </strong>
+
+                                    <br>
+
+                                    ${order.address || "Not provided"}
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ORDERED ITEMS -->
+
+                        <div class="items-section">
+
+
+                            <h3 class="items-title">
+
+                                🛍️ Ordered Items
+
+                            </h3>
+
+
+
+                            ${(order.items || [])
+
+                                .map(item => `
+
+                                    <div class="owner-product">
+
+
+                                        <img
+                                            src="${item.image}"
+                                            alt="${item.name}"
+
+                                            onerror="
+                                                this.src='images/hero.jpg'
+                                            "
+                                        >
+
+
+                                        <div
+                                            class="owner-product-info"
+                                        >
+
+                                            <h4>
+                                                ${item.name}
+                                            </h4>
+
+
+                                            <p>
+                                                Quantity:
+                                                ${item.quantity}
+                                            </p>
+
+
+                                            <p>
+                                                Price:
+                                                ₹${item.price}
+                                            </p>
+
+                                        </div>
+
+
+                                    </div>
+
+                                `)
+
+                                .join("")}
+
+
+                        </div>
+
+
+
+                        <!-- WHATSAPP BUTTON -->
+
+                        <button
+                            class="whatsapp-button"
+
+                            onclick='contactCustomer(
+                                ${JSON.stringify(order.phone || "")},
+                                ${JSON.stringify(order.customerName || "Customer")},
+                                ${JSON.stringify(order.items || [])}
+                            )'
+                        >
+
+                            📞 Contact Customer on WhatsApp
+
+                        </button>
+
+
+                    </div>
+
+                `)
+
+                .join("");
+
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Orders Error:",
+                error
+            );
+
+
+            container.innerHTML = `
+
+                <div class="no-orders">
+
+                    <h2>
+                        Unable to Load Orders
+                    </h2>
+
+                    <p>
+                        Please make sure JSON Server
+                        is running.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+    /* START */
+
+    loadOrders();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Noor & Barakah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="nav-logo">
+            Noor & Barakah
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="nav-buttons">
+
+            <!-- User greeting -->
+            <span id="userGreeting"></span>
+
+            <!-- Login -->
+            <button id="loginLink"
+                onclick="window.location.href='auth.html'">
+                Login
+            </button>
+
+            <!-- Register -->
+            <button id="registerLink"
+                onclick="window.location.href='auth.html#register'">
+                Register
+            </button>
+
+            <!-- Cart -->
+            <button onclick="goToCart()">
+                🛒 Cart
+            </button>
+
+            <!-- Logout -->
+            <button id="logoutLink"
+                onclick="logoutUser()"
+                style="display:none;">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- PRODUCTS PAGE -->
+
+    <section class="products-page">
+
+        <p class="section-small">
+            NOOR & BARAKAH
+        </p>
+
+        <h1>Our Resin Collection</h1>
+
+
+        <!-- SEARCH / FILTER / SORT -->
+
+        <div class="product-controls">
+
+            <!-- Search -->
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                onkeyup="displayProducts()"
+            >
+
+
+            <!-- Category Filter -->
+            <select
+                id="filterCategory"
+                onchange="displayProducts()"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="gifts">
+                    Resin Gifts
+                </option>
+
+                <option value="personalized">
+                    Personalized
+                </option>
+
+                <option value="decor">
+                    Home Decor
+                </option>
+
+            </select>
+
+
+            <!-- Price Sort -->
+            <select
+                id="sortPrice"
+                onchange="displayProducts()"
+            >
+
+                <option value="default">
+                    Sort by Price
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div
+            id="productContainer"
+            class="product-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- AXIOS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- YOUR JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

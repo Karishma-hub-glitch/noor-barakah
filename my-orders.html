@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | Noor & Barakah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="nav-logo">Noor & Barakah</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <span id="userGreeting"></span>
+
+        <button id="loginLink"
+                onclick="window.location.href='auth.html'">
+            Login
+        </button>
+
+        <button id="registerLink"
+                onclick="window.location.href='auth.html#register'">
+            Register
+        </button>
+
+        <button onclick="goToCart()">🛒 Cart</button>
+
+        <button id="logoutLink"
+                onclick="logoutUser()"
+                style="display:none;">
+            Logout
+        </button>
+    </div>
+
+</header>
+
+
+<section class="orders-section">
+
+    <p class="section-small">NOOR & BARAKAH</p>
+
+    <h1>My Orders</h1>
+
+    <div id="ordersContainer">
+        my orders
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Blood Bangles",
+      "price": 500,
+      "image": "images/products/blood bangles.jpeg",
+      "stock": 10,
+      "category": "gifts"
+    },
+    {
+      "id": "2",
+      "name": "Blood Keychains",
+      "price": 150,
+      "image": "images/products/blood keychains.jpeg",
+      "stock": 15,
+      "category": "personalized"
+    },
+    {
+      "id": "3",
+      "name": "Box Frame",
+      "price": 1500,
+      "image": "images/products/box frame.jpeg",
+      "stock": 5,
+      "category": "decor"
+    },
+    {
+      "id": "4",
+      "name": "Bracelets",
+      "price": 79,
+      "image": "images/products/bracelets.jpeg",
+      "stock": 12,
+      "category": "gifts"
+    },
+    {
+      "id": "5",
+      "name": "Ear Rings",
+      "price": 69,
+      "image": "images/products/ear rings.jpeg",
+      "stock": 10,
+      "category": "gifts"
+    },
+    {
+      "id": "6",
+      "name": "Resin Frame",
+      "price": 650,
+      "image": "images/products/frames.png",
+      "stock": 7,
+      "category": "decor"
+    },
+    {
+      "id": "7",
+      "name": "Heart Keychain",
+      "price": 129,
+      "image": "images/products/heart keychain.jpeg",
+      "stock": 20,
+      "category": "personalized"
+    },
+    {
+      "id": "8",
+      "name": "Keychains",
+      "price": 100,
+      "image": "images/products/keychain.jpeg",
+      "stock": 20,
+      "category": "personalized"
+    },
+    {
+      "id": "9",
+      "name": "Phone Pouch",
+      "price": 200,
+      "image": "images/products/phone pouch.jpeg",
+      "stock": 10,
+      "category": "gifts"
+    },
+    {
+      "id": "10",
+      "name": "Resin Rakhi",
+      "price": 70,
+      "image": "images/products/resin rakhi's.png",
+      "stock": 15,
+      "category": "gifts"
+    },
+    {
+      "id": "11",
+      "name": "Frame 1",
+      "price": 700,
+      "image": "images/products/frame 2.png",
+      "stock": 5,
+      "category": "decor"
+    },
+    {
+      "id": "12",
+      "name": "Frame 2",
+      "price": 800,
+      "image": "images/products/frame 3.png",
+      "stock": 5,
+      "category": "decor"
+    },
+    {
+      "id": "13",
+      "name": "Frame 3",
+      "price": 650,
+      "image": "images/products/frame 4.jpeg",
+      "stock": 5,
+      "category": "decor"
+    },
+    {
+      "id": "14",
+      "name": "Frame 4",
+      "price": 750,
+      "image": "images/products/frame 5.jpeg",
+      "stock": 5,
+      "category": "decor"
+    },
+    {
+      "name": "Flower Preservation",
+      "price": 900,
+      "image": "images\\products\\Flower Preservation.png",
+      "category": "gifts",
+      "description": "",
+      "id": "tVrEP9S7SBc"
+    }
+  ],
+  "users": [
+    {
+      "name": "Karishma",
+      "regNo": "12345",
+      "password": "1234",
+      "address": "Guntur",
+      "id": "wVabsA4iYNk"
+    },
+    {
+      "name": "karishma shaik",
+      "regNo": "12345",
+      "password": "1234",
+      "address": "guntur",
+      "id": "t42Y9VcfWe4"
+    },
+    {
+      "name": "Karishma",
+      "customerId": "C001",
+      "phone": "C001",
+      "password": "1234",
+      "address": "guntur",
+      "id": "0I4VHXi1GdM"
+    },
+    {
+      "name": "Karishma Shaik",
+      "customerId": "C003",
+      "phone": "09966252055",
+      "password": "1324",
+      "address": "guntur",
+      "id": "C_n_EkZGfdI"
+    },
+    {
+      "name": "Karishma Shaik",
+      "customerId": "C005",
+      "phone": "9966252055",
+      "password": "1977",
+      "address": "tenali",
+      "id": "qA4IkZAcLQQ"
+    },
+    {
+      "name": "Jafreen",
+      "customerId": "1432",
+      "phone": "7013586187",
+      "password": "2804",
+      "address": "Vizag",
+      "id": "vWgh8rIEJHM"
+    }
+  ],
+  "orders": [
+    {
+      "userId": "C_n_EkZGfdI",
+      "customerName": "Karishma Shaik",
+      "customerId": "C003",
+      "phone": "09966252055",
+      "address": "guntur",
+      "items": [
+        {
+          "id": "1",
+          "name": "Blood Bangles",
+          "price": 500,
+          "image": "images/products/blood bangles.jpeg",
+          "quantity": 4
+        }
+      ],
+      "total": 2000,
+      "date": "9/20/2026, 7:31:33 PM",
+      "status": "Placed",
+      "id": "O-mDUteyWgY"
+    },
+    {
+      "userId": "qA4IkZAcLQQ",
+      "customerName": "Karishma Shaik",
+      "customerId": "C005",
+      "phone": "9966252055",
+      "address": "tenali",
+      "items": [
+        {
+          "id": "1",
+          "name": "Blood Bangles",
+          "price": 500,
+          "image": "images/products/blood bangles.jpeg",
+          "quantity": 4
+        },
+        {
+          "id": "6",
+          "name": "Resin Frame",
+          "price": 650,
+          "image": "images/products/frames.png",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Blood Keychains",
+          "price": 150,
+          "image": "images/products/blood keychains.jpeg",
+          "quantity": 4
+        }
+      ],
+      "total": 3250,
+      "date": "9/20/2026, 10:51:24 PM",
+      "status": "Placed",
+      "id": "IzoVScQBzRQ"
+    },
+    {
+      "userId": "qA4IkZAcLQQ",
+      "customerName": "Karishma Shaik",
+      "customerId": "C005",
+      "phone": "9966252055",
+      "address": "tenali",
+      "items": [
+        {
+          "id": "10",
+          "name": "Resin Rakhi",
+          "price": 70,
+          "image": "images/products/resin rakhi's.png",
+          "quantity": 1
+        }
+      ],
+      "total": 70,
+      "date": "9/20/2026, 10:57:24 PM",
+      "status": "Placed",
+      "id": "PcqJEpkDi2U"
+    },
+    {
+      "userId": "qA4IkZAcLQQ",
+      "customerName": "Karishma Shaik",
+      "customerId": "C005",
+      "phone": "9966252055",
+      "address": "tenali",
+      "items": [
+        {
+          "id": "6",
+          "name": "Resin Frame",
+          "price": 650,
+          "image": "images/products/frames.png",
+          "quantity": 1
+        }
+      ],
+      "total": 650,
+      "date": "9/21/2026, 12:16:12 AM",
+      "status": "Placed",
+      "id": "124O0-UW8Cs"
+    },
+    {
+      "userId": "qA4IkZAcLQQ",
+      "customerName": "Karishma Shaik",
+      "customerId": "C005",
+      "phone": "9966252055",
+      "address": "tenali",
+      "items": [
+        {
+          "id": "5",
+          "name": "Ear Rings",
+          "price": 69,
+          "image": "images/products/ear rings.jpeg",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Box Frame",
+          "price": 1500,
+          "image": "images/products/box frame.jpeg",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Heart Keychain",
+          "price": 129,
+          "image": "images/products/heart keychain.jpeg",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "Blood Bangles",
+          "price": 500,
+          "image": "images/products/blood bangles.jpeg",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Blood Keychains",
+          "price": 150,
+          "image": "images/products/blood keychains.jpeg",
+          "quantity": 1
+        }
+      ],
+      "total": 2348,
+      "date": "9/21/2026, 8:25:59 AM",
+      "status": "Placed",
+      "id": "fIZeMgi_e48"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
