@@ -936,3 +936,97 @@ footer {
 .customize-section textarea::placeholder {
     color: #999;
 }
+/* General responsive improvements */
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+width: 100%;
+overflow-x: hidden;
+}
+
+body {
+width: 100%;
+margin: 0;
+overflow-x: hidden;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+/* Tablets and mobile phones */
+@media screen and (max-width: 768px) {
+body {
+font-size: 15px;
+}
+
+.container,
+.products-container,
+.product-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Product grids */
+.products,
+.product-grid,
+.products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* Product images */
+.products img,
+.product-grid img,
+.products-grid img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Headings */
+h1 {
+    font-size: clamp(24px, 6vw, 34px);
+}
+
+h2 {
+    font-size: clamp(20px, 5vw, 28px);
+}
+
+/* Forms and buttons */
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+/* Prevent wide tables from breaking the layout */
+table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+.products,
+.product-grid,
+.products-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 8px;
+}
+
+button {
+    padding: 10px 14px;
+}
+
+
+}
